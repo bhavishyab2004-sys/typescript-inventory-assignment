@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dist/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2>Stockroom.</h2>
+        <p>PRODUCT INVENTORY MANAGER</p>
+    </header>
+
+    <main>
+        <h1>Your stock, under control.</h1>
+        <p>Manage products and track your inventory.</p>
+
+        <section class="stats">
+            <div class="card">
+                <p>Total Products</p>
+                <h2 id="productCount">4</h2>
+            </div>
+
+            <div class="card">
+                <p>Units in Stock</p>
+                <h2 id="unitCount">34</h2>
+            </div>
+
+            <div class="card">
+                <p>Inventory Value</p>
+                <h2 id="inventoryValue">₹36,500</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Product</h2>
+
+            <form id="productForm">
+                <label for="productName">Product Name</label>
+                <input id="productName" type="text" required>
+
+                <label for="productPrice">Price (₹)</label>
+                <input id="productPrice" type="number" min="0.01" step="0.01" required>
+
+                <label for="productQuantity">Quantity</label>
+                <input id="productQuantity" type="number" min="0" step="1" required>
+
+                <label for="productCategory">Category</label>
+                <select id="productCategory" required>
+                    <option value="">Select category</option>
+                    <option>Electronics</option>
+                    <option>Accessories</option>
+                    <option>Stationery</option>
+                    <option>Furniture</option>
+                    <option>Other</option>
+                </select>
+
+                <button type="submit">Add Product</button>
+            </form>
+            <p id="formMessage"></p>
+        </section>
+
+        <section class="panel">
+            <h2>Product Inventory</h2>
+            <input id="searchInput" type="search"
+                placeholder="Search products or categories...">
+
+            <div id="productList"></div>
+            <p id="emptyMessage" hidden>No products found.</p>
+        </section>
+    </main>
+</body>
+</html>
